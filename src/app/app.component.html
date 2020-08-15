@@ -1,0 +1,90 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Mani's Tools</h1>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Tech News</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/corona">Corona</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/tools">Tools</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Courses" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/links">Sites</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/classcentral">Free courses</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Calculate" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/allcalc">All Calculator</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Convert" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/doc2pdf">File convert</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Stocks" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/nse">NSE</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Hosting" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/domain">Premium Domain</a>
+          </li> 
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/freedomain">Free Domain</a>
+          </li> 
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/gme">Free Hosting</a>
+          </li> 
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+        Please install iframe Allow extension to view sites <a href="https://chrome.google.com/webstore/detail/iframe-allow/gifgpciglhhpmeefjdmlpboipkibhbjg?hl=en" target="/">Install</a>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
